@@ -1,7 +1,8 @@
 package com.sda.java8;
 
 public class Node {
-    private int i;
+    private final int i;
+    private Node nextElement;
 
     public Node (int i) {
         this.i = i;
