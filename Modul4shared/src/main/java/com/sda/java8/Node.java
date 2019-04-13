@@ -1,11 +1,11 @@
 package com.sda.java8;
 
 public class Node {
-    private final int i;
+    private final int value ;
     private Node nextElement;
 
-    public Node (int i) {
-        this.i = i;
-    }
+    public Node (int value){
+        this.value=value;
 
+    }
 }
