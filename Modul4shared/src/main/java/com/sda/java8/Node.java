@@ -20,15 +20,5 @@ public class Node {
         this.nextElement = nextElement;
     }
 
-    public int getValue() {
-        return value;
-    }
 
-    public Node getNextElement() {
-        return nextElement;
-    }
-
-    public void setNextElement(Node nextElement) {
-        this.nextElement = nextElement;
-    }
 }
