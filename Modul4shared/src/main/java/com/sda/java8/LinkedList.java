@@ -47,8 +47,8 @@ public class LinkedList {
         nodCurent.setNextElement(nodCurent.getNextElement().getNextElement());
 
 //        REMOVE IF LIST HAS 2 ELEMENTS
-//        if (head.getNextElement().getNextElement() == null) {
-//            head.setNextElement(null);
+//        if (head.getRight().getRight() == null) {
+//            head.setRight(null);
 //        }
     }
 }

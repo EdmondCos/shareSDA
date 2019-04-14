@@ -1,7 +1,15 @@
 package com.sda.java8;
 
+import com.sda.java8.binarySearchTree.BinarySearchTree;
+
 public class Application {
     public static void main(String[] args) {
+
+//        doubleLinkedNode();
+//        linkedListOneWayRemove();
+    }
+
+    private static void doubleLinkedNode() {
         DoubleLinkedNode nod1 = new DoubleLinkedNode(20);
         DoubleLinkedNode nod2 = new DoubleLinkedNode(40);
         DoubleLinkedNode nod3 = new DoubleLinkedNode(50);
@@ -20,10 +28,9 @@ public class Application {
         list.remove(30);
         list.remove(20);
         System.out.println("x: " + list.printReverse());
-
-//        linkedListOneWayRemove();
+        list.add(new DoubleLinkedNode(40));
+        System.out.println(list.printReverse());
     }
-
     private static void linkedListOneWayRemove() {
         Node node1 = new Node(20);
         Node node2 = new Node(40);
