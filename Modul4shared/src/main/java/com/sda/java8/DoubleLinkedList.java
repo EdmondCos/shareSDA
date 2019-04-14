@@ -1,27 +1,36 @@
 package com.sda.java8;
 
-public class LinkedList {
-    private Node head;
+public class DoubleLinkedList {
+    private DoubleLinkedNode head;
+    private DoubleLinkedNode tail;
 
-    void add(Node node) { //20 / 40 / 50
+    void add(DoubleLinkedNode node) { //20 40 50
         if (head == null) {
-            head = node;
+            head = node; // 0 20
+            tail = node; // 0 20
             return;
         }
-        Node parcurge = head; //0 / 20 / 20
-        while (parcurge.getNextElement() != null) {
-            parcurge = parcurge.getNextElement(); //0 / 20 / 40
-        }
-        parcurge.setNextElement(node); //0 / 40 / 50 /
+        tail.setNextElement(node); // n/a 20.setEl(40) 40.setEl(50)
+        node.setPreviousElement(tail); // n/a 40.setPr(20) 50.setPr(40)
+        tail = node; // n/a 20->40 40->50
     }
 
     String print() {
         StringBuilder builder = new StringBuilder();
-        for (Node nodCurent = head; nodCurent != null; nodCurent = nodCurent.getNextElement()) {
+        for (DoubleLinkedNode nodCurent = head; nodCurent != null; nodCurent = nodCurent.getNextElement()) {
             builder.append(nodCurent.getValue());
             builder.append(" ");
         }
         return builder.toString();
+    }
+
+    String printReverse() {
+        StringBuilder reverse = new StringBuilder();
+        for (DoubleLinkedNode ultimulNod = tail; ultimulNod != null; ultimulNod = ultimulNod.getPreviousElement()) {
+            reverse.append(ultimulNod.getValue());
+            reverse.append(" ");
+        }
+        return reverse.toString();
     }
 
     void remove(int value) { //40
@@ -35,7 +44,8 @@ public class LinkedList {
             return;
         }
         //walk the list until we find the value or the list is finished
-        Node nodCurent = head;
+        DoubleLinkedNode nodCurent = head;
+        DoubleLinkedNode ultimulNod = tail;
         while (nodCurent.getNextElement() != null && nodCurent.getNextElement().getValue() != value) {
             nodCurent = nodCurent.getNextElement();
         }
@@ -45,6 +55,8 @@ public class LinkedList {
         }
         //remove the element
         nodCurent.setNextElement(nodCurent.getNextElement().getNextElement());
+        ultimulNod.setPreviousElement(ultimulNod.getPreviousElement().getPreviousElement());
+
 
 //        REMOVE IF LIST HAS 2 ELEMENTS
 //        if (head.getNextElement().getNextElement() == null) {
