@@ -38,25 +38,39 @@ public class DoubleLinkedList {
         if (head == null) {
             return;
         }
-        //if 1st element is the value we anto to remove, head becomes the next element
-        if (head.getValue() == value) {
-            head = head.getNextElement();
+
+        if (head.getValue() == value && head.getNextElement() == null) {
+            head = null;
+            tail = null;
             return;
         }
+
+        //if 1st element is the value we want to remove, head becomes the next element
+        if (head.getValue() == value) {
+            head = head.getNextElement();
+            head.setPreviousElement(null);
+            return;
+        }
+
+        //if last element is the value we want to remove, tail becomes the last element
+        if (tail.getValue() == value) {
+            tail = tail.getPreviousElement();
+            tail.setNextElement(null);
+            return;
+        }
+
         //walk the list until we find the value or the list is finished
         DoubleLinkedNode nodCurent = head;
-        DoubleLinkedNode ultimulNod = tail;
         while (nodCurent.getNextElement() != null && nodCurent.getNextElement().getValue() != value) {
             nodCurent = nodCurent.getNextElement();
         }
-        //if we dod not find the lelment, end
+        //if we dod not find the element, end
         if (nodCurent.getNextElement() == null) {
             return;
         }
         //remove the element
         nodCurent.setNextElement(nodCurent.getNextElement().getNextElement());
-        ultimulNod.setPreviousElement(ultimulNod.getPreviousElement().getPreviousElement());
-
+        nodCurent.getNextElement().setPreviousElement(nodCurent);
 
 //        REMOVE IF LIST HAS 2 ELEMENTS
 //        if (head.getNextElement().getNextElement() == null) {

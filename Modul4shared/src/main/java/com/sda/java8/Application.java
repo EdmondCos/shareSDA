@@ -15,8 +15,11 @@ public class Application {
         System.out.println(list.print());
         System.out.println(list.printReverse());
         System.out.println();
+        list.remove(50);
+        list.remove(40);
+        list.remove(30);
         list.remove(20);
-        System.out.println(list.printReverse());
+        System.out.println("x: " + list.printReverse());
 
 //        linkedListOneWayRemove();
     }
