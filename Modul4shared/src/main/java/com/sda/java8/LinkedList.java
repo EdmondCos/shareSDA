@@ -17,10 +17,38 @@ public class LinkedList {
 
     String print() {
         StringBuilder builder = new StringBuilder();
-        for (Node nodCurent = head; nodCurent != null; nodCurent = nodCurent.getNextElement()){
+        for (Node nodCurent = head; nodCurent != null; nodCurent = nodCurent.getNextElement()) {
             builder.append(nodCurent.getValue());
             builder.append(" ");
         }
-            return builder.toString();
+        return builder.toString();
+    }
+
+    void remove(int value) { //40
+        //if list is empty we stop
+        if (head == null) {
+            return;
+        }
+        //if 1st element is the value we anto to remove, head becomes the next element
+        if (head.getValue() == value) {
+            head = head.getNextElement();
+            return;
+        }
+        //walk the list until we find the value or the list is finished
+        Node nodCurent = head;
+        while (nodCurent.getNextElement() != null && nodCurent.getNextElement().getValue() != value) {
+            nodCurent = nodCurent.getNextElement();
+        }
+        //if we dod not find the lelment, end
+        if (nodCurent.getNextElement() == null) {
+            return;
+        }
+        //remove the element
+        nodCurent.setNextElement(nodCurent.getNextElement().getNextElement());
+
+//        REMOVE IF LIST HAS 2 ELEMENTS
+//        if (head.getNextElement().getNextElement() == null) {
+//            head.setNextElement(null);
+//        }
     }
 }

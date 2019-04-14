@@ -3,6 +3,7 @@ package com.sda.java8;
 public class Node {
     private final int value ;
     private Node nextElement;
+    private Node previousElement;
 
     public Node (int value){
         this.value=value;
