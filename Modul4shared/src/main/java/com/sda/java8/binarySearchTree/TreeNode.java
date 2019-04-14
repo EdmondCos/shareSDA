@@ -2,9 +2,11 @@ package com.sda.java8.binarySearchTree;
 
 public class TreeNode {
     private final int key;
-    private TreeNode right;
-    private TreeNode left;
+
     private TreeNode parent;
+    private TreeNode left;
+    private TreeNode right;
+
 
     public TreeNode(int key) {
         this.key = key;
@@ -14,27 +16,28 @@ public class TreeNode {
         return key;
     }
 
-    public TreeNode getRight() {
-        return right;
+    public TreeNode getParent() {
+        return parent;
+    }
+
+    public void setParent(TreeNode parent) {
+        this.parent = parent;
     }
 
     public TreeNode getLeft() {
         return left;
     }
 
-    public  TreeNode getParent() {
-        return parent;
+    public void setLeft(TreeNode left) {
+        this.left = left;
+    }
+
+    public TreeNode getRight() {
+        return right;
     }
 
     public void setRight(TreeNode right) {
         this.right = right;
     }
 
-    public void setLeft(TreeNode left) {
-        this.left = left;
-    }
-
-    public void setParent(TreeNode parent) {
-        this.parent = parent;
-    }
 }

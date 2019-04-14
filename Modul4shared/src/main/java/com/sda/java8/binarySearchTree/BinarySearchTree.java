@@ -3,15 +3,17 @@ package com.sda.java8.binarySearchTree;
 public class BinarySearchTree {
     private TreeNode root;
 
-    void add(int key) {
+    public void add(int key) {
         TreeNode newNode = new TreeNode(key);
 
         if (root == null) {
             root = newNode;
             return;
         }
+
+        TreeNode currentNode = root;
+
         while (true) {
-            TreeNode currentNode = root;
 
             if (currentNode.getKey() < key) {
                 if (currentNode.getRight() != null){
