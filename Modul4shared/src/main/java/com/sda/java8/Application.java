@@ -14,6 +14,9 @@ public class Application {
         list.add(nod4);
         System.out.println(list.print());
         System.out.println(list.printReverse());
+        System.out.println();
+        list.remove(20);
+        System.out.println(list.printReverse());
 
 //        linkedListOneWayRemove();
     }

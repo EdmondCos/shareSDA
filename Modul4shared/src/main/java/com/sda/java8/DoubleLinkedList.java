@@ -35,7 +35,7 @@ public class DoubleLinkedList {
 
     void remove(int value) { //40
         //if list is empty we stop
-        if (tail == null) {
+        if (head == null) {
             return;
         }
         //if 1st element is the value we anto to remove, head becomes the next element
@@ -45,6 +45,7 @@ public class DoubleLinkedList {
         }
         //walk the list until we find the value or the list is finished
         DoubleLinkedNode nodCurent = head;
+        DoubleLinkedNode ultimulNod = tail;
         while (nodCurent.getNextElement() != null && nodCurent.getNextElement().getValue() != value) {
             nodCurent = nodCurent.getNextElement();
         }
@@ -54,6 +55,8 @@ public class DoubleLinkedList {
         }
         //remove the element
         nodCurent.setNextElement(nodCurent.getNextElement().getNextElement());
+        ultimulNod.setPreviousElement(ultimulNod.getPreviousElement().getPreviousElement());
+
 
 //        REMOVE IF LIST HAS 2 ELEMENTS
 //        if (head.getNextElement().getNextElement() == null) {
