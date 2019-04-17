@@ -1,8 +1,6 @@
 package HW5;
 
-import java.util.ArrayList;
 import java.util.LinkedList;
-import java.util.List;
 
 public class Liste {
     final int MAX_SIZE = 3;
@@ -10,7 +8,8 @@ public class Liste {
     private Persons head;
     int counter = 0;
 
-    public void store(String first, String last) {
+    //Save the names in a List
+    public void save(String first, String last) {
 //        List max size = 3
 //        if (counter >= MAX_SIZE){
 //            return;
@@ -26,6 +25,7 @@ public class Liste {
         om = om1;
     }
 
+    //Display the saved names
     void display() {
         om = head;
         for (int i = 0; i < counter; i++) {
@@ -38,6 +38,7 @@ public class Liste {
         System.out.println("Size: " + counter);
     }
 
+    //Search if a given name is in the list
     void search(String first, String last) {
         Persons search = new Persons(first, last);
         om = head;
@@ -53,11 +54,22 @@ public class Liste {
         System.out.println(first + " " + last + " was not present");
     }
 
+    //Turn the list into an array
     void toArray() {
-
+        Persons[] array = new Persons[counter];
+        int i = 0;
+        for (om = head; om != null; om = om.getNextPosition()){
+            if (i == counter){
+                return;
+            }
+            array[i] = om;
+            i++;
+        }
+        for (Persons x : array)
+        System.out.print(x.getFirstName() + " " + x.getLastName() + "; ");
     }
 
-
+// Exercitiu sortare pret
     private ListeNode nod1;
     LinkedList price = new LinkedList();
     String x = new String();

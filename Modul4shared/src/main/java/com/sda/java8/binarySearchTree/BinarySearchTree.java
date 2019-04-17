@@ -37,12 +37,12 @@ public class BinarySearchTree {
 
     }
 
-    void print(){
+    public void print(){
         printRecursiv(root);
         System.out.println();
     }
 
-    void printRecursiv(TreeNode node) {
+    public void printRecursiv(TreeNode node) {
         if (node != null){
             printRecursiv(node.getLeft());
             System.out.print(node.getKey() + " ");

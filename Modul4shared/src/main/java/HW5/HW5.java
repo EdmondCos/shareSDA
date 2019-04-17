@@ -1,26 +1,23 @@
 package HW5;
 
-import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Scanner;
-
 public class HW5 {
     public static void main(String[] args) {
         Liste lista = new Liste();
-
-        lista.store("Albert", "Einstein");
-        lista.store("Stephen", "Hawking");
-        lista.store("Isaac", "Newton");
-        lista.store("Charles", "Darwin");
-        lista.store("Nikola", "Tesla");
-
-        lista.display();
-        System.out.println();
-        lista.search("Albert", "Einstein");
-        System.out.println();
+        BST tree = new BST();
 
 
+
+        tree.add(40);
+        tree.add(50);
+        tree.add(30);
+        tree.add(20);
+        tree.add(35);
+        tree.add(32);
+        tree.add(40);
+
+        tree.print();
+
+//        sortNames(lista);
 //        newPhone(lista);
 
 //        Starters starters = new Starters();
@@ -28,6 +25,21 @@ public class HW5 {
 //        starters.adult();
 //        starters.pom();
 
+    }
+
+    private static void sortNames(Liste lista) {
+        lista.save("Albert", "Einstein");
+        lista.save("Stephen", "Hawking");
+        lista.save("Isaac", "Newton");
+        lista.save("Charles", "Darwin");
+        lista.save("Nikola", "Tesla");
+
+        lista.display();
+        System.out.println();
+        lista.search("Albert", "Einstein");
+        System.out.println();
+        lista.toArray();
+        System.out.println();
     }
 
     private static void newPhone(Liste lista) {
