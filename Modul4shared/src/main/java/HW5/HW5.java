@@ -1,16 +1,29 @@
 package HW5;
 
+import java.util.ArrayList;
 import java.util.LinkedList;
+import java.util.List;
 import java.util.Scanner;
 
 public class HW5 {
     public static void main(String[] args) {
-        Starters starters = new Starters();
         Liste lista = new Liste();
+
+        lista.store("Albert", "Einstein");
+        lista.store("Stephen", "Hawking");
+        lista.store("Isaac", "Newton");
+        lista.store("Charles", "Darwin");
+        lista.store("Nikola", "Tesla");
+
+        lista.display();
+        System.out.println();
+        lista.search("Albert", "Einstein");
+        System.out.println();
 
 
 //        newPhone(lista);
 
+//        Starters starters = new Starters();
 //        starters.array();
 //        starters.adult();
 //        starters.pom();
