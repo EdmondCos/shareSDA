@@ -25,17 +25,55 @@ public class Liste {
         om = om1;
     }
 
-    //Display the saved names
+    Persons p;
+    Persons r;
+
+    void swap(int min, int max) { // 1,3
+        om = head;
+        for (int i = 1; i <= min; i++) {
+            om = om.getNextPosition();
+        }
+        p = om;
+        om = head;
+        for (int i = 1; i <= max; i++) {
+            om = om.getNextPosition();
+        }
+        r = om;
+        System.out.println(r.getFirstName());
+
+        om = head;
+        for (int i = 0; i<=max+1; i++){
+            om = om.getNextPosition();
+        }
+        p.setNextPosition(om);
+
+        om = head;
+        for (int i = 0; i < max; i++){
+            om = om.getNextPosition();
+        }
+        om.setNextPosition(p);
+
+        om = head;
+        for (int i = 0; i <= min+1; i++){
+            om = om.getNextPosition();
+        }
+        r.setNextPosition(om);
+
+        om = head;
+        for (int i = 0; i < min; i++){
+            om = om.getNextPosition();
+        }
+        om.setNextPosition(r);
+    }
+
+    //Print the saved names
     void display() {
         om = head;
-        for (int i = 0; i < counter; i++) {
+        for (om = head; om != null; om = om.getNextPosition()) {
             System.out.println(om.getFirstName() + " " + om.getLastName());
-            om = om.getNextPosition();
-            if (om == null) {
-                break;
-            }
         }
         System.out.println("Size: " + counter);
+        System.out.println();
     }
 
     //Search if a given name is in the list
@@ -46,30 +84,34 @@ public class Liste {
             if (om.getFirstName().equals(search.getFirstName())) {
                 if (om.getLastName().equals(search.getLastName())) {
                     System.out.println(first + " " + last + " was present");
+                    System.out.println();
                     return;
                 }
             }
             om = om.getNextPosition();
         }
         System.out.println(first + " " + last + " was not present");
+        System.out.println();
     }
 
     //Turn the list into an array
     void toArray() {
         Persons[] array = new Persons[counter];
         int i = 0;
-        for (om = head; om != null; om = om.getNextPosition()){
-            if (i == counter){
+        for (om = head; om != null; om = om.getNextPosition()) {
+            if (i == counter) {
                 return;
             }
             array[i] = om;
             i++;
         }
-        for (Persons x : array)
-        System.out.print(x.getFirstName() + " " + x.getLastName() + "; ");
+        for (Persons x : array) {
+            System.out.print(x.getFirstName() + " " + x.getLastName() + "; ");
+            System.out.println();
+        }
     }
 
-// Exercitiu sortare pret
+    // Exercitiu sortare pret
     private ListeNode nod1;
     LinkedList price = new LinkedList();
     String x = new String();

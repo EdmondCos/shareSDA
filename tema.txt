@@ -46,10 +46,10 @@ Binary Search Tree (BST)
 1. Fix the current implementation of the BST: check the add() method, use the debugger and try to add the same element twice.
 To test if it works, insert 10K nodes and try to print: you should get a print of some of the nodes followed by StackOverflowError arround 6K.
 
-??2. Search for a given value and return true if found, false otherwise.
+2. Search for a given value and return true if found, false otherwise.
 Test input: 40, 50, 30, 20, 35, 32. Output: search(15): false; search(32): true;
 
-??3. Display the min and the max values of a tree. Create functions int getMin() and int getMax().
+3. Display the min and the max values of a tree. Create functions int getMin() and int getMax().
 You need to navigate the tree properly for each case. Output for the above input: min: 20, max: 50.
 
 ??4. The implemented traversal during the course was called "in-order" traversal, which is a type of Depth First Search (DFS).

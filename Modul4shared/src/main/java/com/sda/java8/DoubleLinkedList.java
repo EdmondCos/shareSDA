@@ -34,6 +34,7 @@ public class DoubleLinkedList {
     }
 
     void remove(int value) { //40
+
         //if list is empty we stop
         if (head == null) {
             return;

@@ -5,6 +5,8 @@ public class TreeNode {
     TreeNode parent;
     TreeNode left;
     TreeNode right;
+    int min;
+    int max;
 
     public TreeNode(int key) {
         this.val = key;
@@ -38,4 +40,19 @@ public class TreeNode {
         return right;
     }
 
+    public int getMin() {
+        return min;
+    }
+
+    public void setMin(int min) {
+        this.min = min;
+    }
+
+    public int getMax() {
+        return max;
+    }
+
+    public void setMax(int max) {
+        this.max = max;
+    }
 }

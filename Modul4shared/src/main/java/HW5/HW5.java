@@ -5,19 +5,22 @@ public class HW5 {
         Liste lista = new Liste();
         BST tree = new BST();
 
+//        tree.add(40);
+//        tree.add(50);
+//        tree.add(30);
+//        tree.add(20);
+//        tree.add(35);
+//        tree.add(32);
+//        tree.add(40);
+//
+//        tree.print();
+//        System.out.println();
+//        tree.search(40);
+//        System.out.println();
+//        tree.minMax();
 
 
-        tree.add(40);
-        tree.add(50);
-        tree.add(30);
-        tree.add(20);
-        tree.add(35);
-        tree.add(32);
-        tree.add(40);
-
-        tree.print();
-
-//        sortNames(lista);
+        sortNames(lista);
 //        newPhone(lista);
 
 //        Starters starters = new Starters();
@@ -34,12 +37,10 @@ public class HW5 {
         lista.save("Charles", "Darwin");
         lista.save("Nikola", "Tesla");
 
+        lista.swap(1,3);
         lista.display();
-        System.out.println();
-        lista.search("Albert", "Einstein");
-        System.out.println();
-        lista.toArray();
-        System.out.println();
+//        lista.search("Albert", "Einstein");
+//        lista.toArray();
     }
 
     private static void newPhone(Liste lista) {
