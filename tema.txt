@@ -28,7 +28,7 @@ order as the input.
 Add a counter to the linked list, update it for each add/remove and provide the value via a getter getSize().
 Rerun the above input and print the size. Output: 5.
 
-??4. While you were counting the people, you realise you met Nikola before Charles. Swap the places.
+4. While you were counting the people, you realise you met Nikola before Charles. Swap the places.
 Create a method with the following signature: void swap(int first_position, int second_position). Counting positions starts from 0.
 Test by calling swap(3, 4) and then print(). Nikola should be printed before Charles.
 

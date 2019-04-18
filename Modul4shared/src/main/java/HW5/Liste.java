@@ -25,45 +25,98 @@ public class Liste {
         om = om1;
     }
 
-    Persons p;
-    Persons r;
 
-    void swap(int min, int max) { // 1,3
-        om = head;
-        for (int i = 1; i <= min; i++) {
-            om = om.getNextPosition();
+    void swap(int min, int max) { // 1,2
+        if (min >= counter || max >= counter){
+            System.out.println("Error! List has only " + counter + " elements.");
+            System.out.println();
+            return;
         }
-        p = om;
-        om = head;
-        for (int i = 1; i <= max; i++) {
-            om = om.getNextPosition();
+        if (min == max) {
+            return;
         }
-        r = om;
-        System.out.println(r.getFirstName());
+        if (min == 0) {
+            om = head;
+            Persons x2 = om;
+            Persons x3 = om.getNextPosition();
 
-        om = head;
-        for (int i = 0; i<=max+1; i++){
-            om = om.getNextPosition();
+            om = head;
+            for (int i = 1; i < max; i++) {
+                om = om.getNextPosition();
+            }
+            Persons y1 = om;
+            Persons y2 = om.getNextPosition();
+            Persons y3 = om.getNextPosition().getNextPosition();
+            if (max == 1) {
+                x2.setNextPosition(y3);
+                y2.setNextPosition(x2);
+                head = y2;
+                return;
+            }
+            y2.setNextPosition(x3);
+            y1.setNextPosition(x2);
+            x2.setNextPosition(y3);
+            head = y2;
+            return;
         }
-        p.setNextPosition(om);
+        if (max == 0) {
+            om = head;
+            Persons y2 = om;
+            Persons y3 = om.getNextPosition();
 
-        om = head;
-        for (int i = 0; i < max; i++){
-            om = om.getNextPosition();
+            om = head;
+            for (int i = 1; i < max; i++) {
+                om = om.getNextPosition();
+            }
+            Persons x1 = om;
+            Persons x2 = om.getNextPosition();
+            Persons x3 = om.getNextPosition().getNextPosition();
+            if (min == 1) {
+                y2.setNextPosition(x3);
+                x2.setNextPosition(y2);
+                head = x2;
+                return;
+            }
+            x2.setNextPosition(y3);
+            x1.setNextPosition(y2);
+            y2.setNextPosition(x3);
+            head = x2;
+            return;
         }
-        om.setNextPosition(p);
+        else {
+            om = head;
+            for (int i = 1; i < min; i++) {
+                om = om.getNextPosition();
+            }
+            Persons x1 = om;
+            Persons x2 = om.getNextPosition();
+            Persons x3 = om.getNextPosition().getNextPosition();
 
-        om = head;
-        for (int i = 0; i <= min+1; i++){
-            om = om.getNextPosition();
-        }
-        r.setNextPosition(om);
+            om = head;
+            for (int i = 1; i < max; i++) {
+                om = om.getNextPosition();
+            }
+            Persons y1 = om;
+            Persons y2 = om.getNextPosition();
+            Persons y3 = om.getNextPosition().getNextPosition();
 
-        om = head;
-        for (int i = 0; i < min; i++){
-            om = om.getNextPosition();
+            if (min + 1 == max) {
+                x1.setNextPosition(y2);
+                x3.setNextPosition(y1);
+                x2.setNextPosition(y3);
+                return;
+            }
+            if (min - 1 == max) {
+                y1.setNextPosition(x2);
+                y3.setNextPosition(x1);
+                y2.setNextPosition(x3);
+                return;
+            }
+            x1.setNextPosition(y2);
+            y1.setNextPosition(x2);
+            x2.setNextPosition(y3);
+            y2.setNextPosition(x3);
         }
-        om.setNextPosition(r);
     }
 
     //Print the saved names
@@ -72,6 +125,7 @@ public class Liste {
         for (om = head; om != null; om = om.getNextPosition()) {
             System.out.println(om.getFirstName() + " " + om.getLastName());
         }
+        System.out.println();
         System.out.println("Size: " + counter);
         System.out.println();
     }

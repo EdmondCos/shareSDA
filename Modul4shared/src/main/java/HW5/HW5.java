@@ -36,8 +36,9 @@ public class HW5 {
         lista.save("Isaac", "Newton");
         lista.save("Charles", "Darwin");
         lista.save("Nikola", "Tesla");
+        lista.save("Carl", "Sagan");
 
-        lista.swap(1,3);
+        lista.swap(3,6);
         lista.display();
 //        lista.search("Albert", "Einstein");
 //        lista.toArray();
