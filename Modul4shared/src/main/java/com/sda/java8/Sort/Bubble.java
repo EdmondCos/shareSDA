@@ -1,7 +1,6 @@
-package com.sda.java8.bubbleSort;
+package com.sda.java8.Sort;
 
 public class Bubble {
-
     public static void bubbleSort(int[] array) {
         //2,4,3
 
