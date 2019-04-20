@@ -1,12 +1,10 @@
-package com.sda.java8;
-
-import com.sda.java8.binarySearchTree.BinarySearchTree;
+package com.sda.java8.linkedList;
 
 public class Application {
     public static void main(String[] args) {
 
-//        doubleLinkedNode();
-//        linkedListOneWayRemove();
+        doubleLinkedNode();
+        linkedListOneWayRemove();
     }
 
     private static void doubleLinkedNode() {

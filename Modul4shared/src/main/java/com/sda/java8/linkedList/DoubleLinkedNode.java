@@ -1,4 +1,4 @@
-package com.sda.java8;
+package com.sda.java8.linkedList;
 
 public class DoubleLinkedNode {
     private final int value;
