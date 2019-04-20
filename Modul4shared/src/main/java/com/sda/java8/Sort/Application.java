@@ -11,41 +11,36 @@ public class Application {
 
         int[] myArray = {2, 4, 3};
         int[] myArray1 = {6, 5, 3, 1, 8, 7, 2, 4};
-
-        mergeSort merge = new mergeSort();
-        merge.mergeSorty(myArray1);
-        merge.print(myArray1);
-
-//        bubbleSortMethod(random);
-
-    }
-
-    private static void bubbleSortMethod(Random random) {
-        Bubble bubble = new Bubble();
-
-        int[] myArray = {6, 5, 3, 1, 8, 7, 2, 4};
-        int size = 100;
+        int size = 100000000;
         int[] randomArray = new int[size];
         for (int i = 0; i < size; i++) {
             int rdm = random.nextInt(size);
-
-            int j = 0;
-            while (j < i) {
-                if (rdm == randomArray[j]) {
-                    j = 0;
-                    rdm = random.nextInt(size);
-                } else {
-                    j++;
-                }
-            }
-
+//            int j = 0;
+//            while (j < i) {
+//                if (rdm == randomArray[j]) {
+//                    j = 0;
+//                    rdm = random.nextInt(size);
+//                } else {
+//                    j++;
+//                }
+//            }
             randomArray[i] = rdm;
         }
 
-        bubble.bubbleSort(myArray);
-        bubble.print(myArray);
-        System.out.println();
+//        mergeSort(randomArray);
+        bubbleSort(randomArray);
+    }
+
+    private static void mergeSort(int[] randomArray) {
+        mergeSort merge = new mergeSort();
+        merge.mergeSorty(randomArray);
+        merge.print(randomArray);
+    }
+
+    private static void bubbleSort(int[] randomArray) {
+        Bubble bubble = new Bubble();
         bubble.bubbleSort(randomArray);
         bubble.print(randomArray);
     }
 }
+
