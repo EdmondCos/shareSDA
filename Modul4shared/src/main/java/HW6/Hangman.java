@@ -22,7 +22,7 @@ public class Hangman {
             cuvant[i] = "_";
         }
 
-        while (counterLose != 5 && counterWin != cuvant.length-2) {
+        while (counterLose != 5 && counterWin != cuvant.length - 2) {
             for (String i : cuvant) {
                 System.out.print(i + " ");
             }
@@ -48,10 +48,10 @@ public class Hangman {
             }
         }
 
-        if (counterWin == cuvant.length-2) {
-            System.out.println("You won!");
+        if (counterWin == cuvant.length - 2) {
+            System.out.println(library[rdm] + " - You won!");
         } else {
-            System.out.println("You lost!");
+            System.out.println(library[rdm] + " - You lost!");
         }
     }
 }
