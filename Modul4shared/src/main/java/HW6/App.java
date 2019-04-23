@@ -1,7 +1,6 @@
 package HW6;
 
 import com.sda.java8.Sort.*;
-
 import java.util.Random;
 
 public class App {
