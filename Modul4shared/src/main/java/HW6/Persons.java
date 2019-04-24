@@ -3,37 +3,30 @@ package HW6;
 import java.time.LocalDate;
 
 public class Persons {
-    private static String lastName;
-    private static String firstName;
-    private static LocalDate birthday;
-    private static Persons test;
+    private String lastName;
+    private String firstName;
+    private LocalDate birthday;
 
-
-    public static void pers(String lastName, String firstName, LocalDate birthday) {
+    public Persons(String lastName, String firstName, LocalDate birthday) {
+        this.lastName = lastName;
+        this.firstName = firstName;
+        this.birthday = birthday;
     }
 
-    public static void sort(Persons array[]) {
+    public static void sort(Persons[] array) {
         boolean bol;
-        do {
+        do{
             bol = false;
-            for (int i = 0; i < array.length - 1; i++) {
-                if (array[i].getLastName().compareTo(array[i + 1].getLastName()) > 0) {
+            for (int i = 0; i<array.length-1; i++){
+                if (array[i].getBirthday().isAfter(array[i+1].getBirthday())){
                     Persons temp = array[i];
-                    array[i] = array[i + 1];
-                    array[i + 1] = temp;
+                    array[i] = array[i+1];
+                    array[i+1] = temp;
                     bol = true;
-                } else if (array[i].getLastName().equals(array[i + 1].getLastName())) {
-                    if (array[i].getFirstName().compareTo(array[i + 1].getFirstName()) > 0) {
-                        Persons temp = array[i];
-                        array[i] = array[i + 1];
-                        array[i + 1] = temp;
-                        bol = true;
-                    }
                 }
             }
-        } while (bol);
+        }while (bol);
     }
-
 
     public String getLastName() {
         return lastName;
@@ -41,6 +34,10 @@ public class Persons {
 
     public String getFirstName() {
         return firstName;
+    }
+
+    public LocalDate getBirthday() {
+        return birthday;
     }
 
     public String toStrings() {
