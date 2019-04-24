@@ -11,19 +11,6 @@ public class App {
         Random random = new Random();
         gradesSort grades = new gradesSort();
 
-        int size = 10;
-        int[] list = new int[size];
-        for (int i = 0; i < size; i++) {
-            int ran = random.nextInt(100) + 1;
-            list[i] = ran;
-        }
-        Arrays.sort(list);
-        for ( int i : list){
-            System.out.print(i + " ");
-        }
-        System.out.println();
-
-        search.search(list);
 
 //        Persons pers = new Persons();
 //        pers.pers("Denise", "Oanta", LocalDate.of(1986, 2, 19));
@@ -36,12 +23,22 @@ public class App {
 //        pers.pers("Diana", "Nita", LocalDate.of(1993, 9, 7));
 //        pers.pers("Andreea", "Dan", LocalDate.of(1989, 11, 12));
 
-
+        searchCounter(random);
 //        operationCount(random);
 //        grades.nota(5, 15);
     }
 
+    private static void searchCounter(Random random) {
+        int size = 10;
+        int[] list = new int[size];
+        for (int i = 0; i < size; i++) {
+            int ran = random.nextInt(100) + 1;
+            list[i] = ran;
+        }
+        Arrays.sort(list);
 
+        search.search(list);
+    }
     private static void operationCount(Random random) {
         int[] x = new int[100];
         for (int i = 0; i < x.length; i++) {

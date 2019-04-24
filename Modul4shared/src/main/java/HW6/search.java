@@ -13,11 +13,14 @@ public class search {
     }
 
     public static void recursiv(int[] array, int start, int end, int x) {
-        if (end == 1 && array[0] == x) {
+        if (end == 1 && array[0] != x) {
+            counter++;
+            System.out.println(x + " was not found after " + counter + " checks");
+        } else if (end == 1 && array[0] == x) {
             counter++;
             System.out.println(x + " was found after " + counter + " checks");
 
-        } else if (x < array[(end / 2) - 1]) {
+        } else if (x <= array[(end / 2) - 1]) {
             counter++;
             end = end / 2;
             int[] z = new int[end];
@@ -32,7 +35,7 @@ public class search {
             } else {
                 start = end / 2 + 1;
             }
-            int startHolder = end/2;
+            int startHolder = end / 2;
             int[] w = new int[start];
             for (int i = 0; i < start; i++) {
                 w[i] = array[startHolder];
