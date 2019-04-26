@@ -11,16 +11,29 @@ public class App {
         Random random = new Random();
         gradesSort grades = new gradesSort();
 
-        Persons pers1 = new Persons("Denise", "Oanta", LocalDate.of(1986, 2, 19));
-        Persons pers2 = new Persons("Cristina", "Trifu", LocalDate.of(1989, 9, 5));
-        Persons pers3 = new Persons("Edmond", "Dabija", LocalDate.of(1994, 9, 5));
-        Persons pers4 = new Persons("Andreea", "Grecu", LocalDate.of(1987, 4, 1));
-        Persons pers5 = new Persons("Gabriela", "Tomas", LocalDate.of(1989, 9, 9));
-        Persons pers6 = new Persons("Mihaela", "Bita", LocalDate.of(1979, 7, 7));
-        Persons pers7 = new Persons("Fabio", "Galamba", LocalDate.of(1985, 5, 2));
-        Persons pers8 = new Persons("Diana", "Nita", LocalDate.of(1993, 9, 7));
-        Persons pers9 = new Persons("Andreea", "Dan", LocalDate.of(1989, 11, 12));
-        Persons[] people = {pers1, pers2, pers3, pers4, pers5, pers6, pers7, pers8, pers9};
+        LinkedList x = new LinkedList();
+        x.add(1);
+        x.add(9);
+        x.add(6);
+        x.add(4);
+        x.add(2);
+        x.add(3);
+
+        x.set(0, x.get(2));
+//        System.out.println(x);
+
+//        mergeLinkedList.mergeSorty(x);
+
+//        Persons pers1 = new Persons("Denise", "Oanta", LocalDate.of(1986, 2, 19));
+//        Persons pers2 = new Persons("Cristina", "Trifu", LocalDate.of(1989, 9, 5));
+//        Persons pers3 = new Persons("Edmond", "Dabija", LocalDate.of(1994, 9, 5));
+//        Persons pers4 = new Persons("Andreea", "Grecu", LocalDate.of(1987, 4, 1));
+//        Persons pers5 = new Persons("Gabriela", "Tomas", LocalDate.of(1989, 9, 9));
+//        Persons pers6 = new Persons("Mihaela", "Bita", LocalDate.of(1979, 7, 7));
+//        Persons pers7 = new Persons("Fabio", "Galamba", LocalDate.of(1985, 5, 2));
+//        Persons pers8 = new Persons("Diana", "Nita", LocalDate.of(1993, 9, 7));
+//        Persons pers9 = new Persons("Andreea", "Dan", LocalDate.of(1989, 11, 12));
+//        Persons[] people = {pers1, pers2, pers3, pers4, pers5, pers6, pers7, pers8, pers9};
 //        sortLastName(people);
 //        sortBirthday(people);
 

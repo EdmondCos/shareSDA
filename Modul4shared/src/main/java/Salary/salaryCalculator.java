@@ -1,7 +1,43 @@
+package Salary;
+
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.util.Scanner;
 
 public class salaryCalculator {
     public static void main(String[] args) {
+        // Frame
+        JTextField net = new JTextField();
+        net.setVisible(true);
+        net.setSize(800, 100);
+        JLabel sal = new JLabel();
+        sal.setVisible(true);
+        sal.setSize(500, 100);
+        sal.setText("Test");
+
+        JFrame frame = new JFrame();
+        frame.setVisible(true);
+        frame.setSize(1000, 500);
+        frame.setLocationRelativeTo(null);
+        frame.add(sal);
+        frame.add(net);
+
+
+        net.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                String z = net.getText() + " Pui";
+                net.setText(z);
+            }
+        });
+
+
+//        stuff();
+    }
+
+    private static void stuff() {
         Scanner scanner = new Scanner(System.in);
         boolean bol = true;
 
