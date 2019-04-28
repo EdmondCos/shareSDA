@@ -36,6 +36,9 @@ public class a {
     private JPanel Bonuri;
     private JTextField nrBon;
     private JTextField valBon;
+    private JTextField venitOT;
+    private JCheckBox liberOT;
+    private JPanel VenitOT;
 
     private String sNet;
     private String sBrut;
