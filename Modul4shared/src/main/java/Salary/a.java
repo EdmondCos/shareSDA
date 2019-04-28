@@ -22,9 +22,9 @@ public class a {
     private JPanel Salariu;
     private JTextField procentCM;
     private JTextField procentWeek;
-    private JTextField procentSarbatori;
+    private JTextField procentHoliday;
     private JCheckBox scutiri;
-    private JTextField procentWeekend;
+    private JTextField procentWeekEnd;
     private JPanel Input;
     private JPanel Output;
     private JPanel Pensie;
@@ -38,7 +38,7 @@ public class a {
     private JTextField valBon;
     private JTextField venitOT;
     private JCheckBox liberOT;
-    private JPanel VenitOT;
+    private JPanel baniOT;
 
     private String sNet;
     private String sBrut;
@@ -49,14 +49,23 @@ public class a {
     private String CMzile;
     private String cmProcent;
 
+    private String OTSapt;
+    private String procentSapt;
+    private String OTSarbatori;
+    private String procentSarbatori;
+    private String OTWeekend;
+    private String procentWeekend;
+
     private boolean faraScutiri = true;
+    private boolean ziLibera = false;
 
     public a() {
         brut.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                sNet = brut.getText();
-                double brut = Double.valueOf(sNet);
+                sBrut = brut.getText();
+                double brut = Double.valueOf(sBrut);
+                double brutFix = brut;
                 numarBon = nrBon.getText();
 
                 //TODO: Valoarea in caz ca userul pune "," la zecimala
@@ -84,22 +93,55 @@ public class a {
                 }
                 double bonuri = nrBonuri * valBonuri;
 
-                //TODO: Calcul estimativ CM
-                CMzile = zileCM.getText();
-                double cmZile = 0;
-                if (!CMzile.isEmpty()){
-                    cmZile = Double.valueOf(CMzile);
+                //TODO: Calcul ore overtime
+                OTSapt = oreSaptamana.getText();
+                double oreSapt = 0;
+                if (!OTSapt.isEmpty()) {
+                    oreSapt = Double.valueOf(OTSapt);
                 }
-                cmProcent = procentCM.getText();
-                double CMporcent = 1 - Double.valueOf(cmProcent)/100;
-                double brutZi = brut/21;
-                brut = brut - (brutZi*CMporcent*cmZile);
+                procentSapt = procentWeek.getText();
+                double saptProcent = Double.valueOf(procentSapt) / 100;
+
+
+                OTSarbatori = oreSarbatori.getText();
+                double oreSarb = 0;
+                if (!OTSarbatori.isEmpty()) {
+                    oreSarb = Double.valueOf(OTSarbatori);
+                }
+                procentSarbatori = procentHoliday.getText();
+                double sarbProcent = Double.valueOf(procentSarbatori) / 100;
+                if (ziLibera) {
+                    sarbProcent = sarbProcent - 1;
+                }
+
+
+                OTWeekend = oreWeekend.getText();
+                double OreWeekend = 0;
+                if (!OTWeekend.isEmpty()) {
+                    OreWeekend = Double.valueOf(OTWeekend);
+                }
+                procentWeekend = procentWeekEnd.getText();
+                double weekendProcent = Double.valueOf(procentWeekend) / 100;
+                if (ziLibera) {
+                    weekendProcent = weekendProcent - 1;
+                }
 
                 //TODO: Verificare deduceri personale
                 double brutTotal = brut + bonuri;
                 double deductibil = getDeductibil(brutTotal);
 
-                //TODO: Calcule taxe si asigurari
+                //TODO: Calcul estimativ CM
+                CMzile = zileCM.getText();
+                double cmZile = 0;
+                if (!CMzile.isEmpty()) {
+                    cmZile = Double.valueOf(CMzile);
+                }
+                cmProcent = procentCM.getText();
+                double CMporcent = 1 - Double.valueOf(cmProcent) / 100;
+                double brutZi = brutFix / 21;
+                brut = brut - (brutZi * CMporcent * cmZile);
+
+                //TODO: Calcule salariu net
                 int pUnu = (int) Math.round(brut * 0.2125);
                 int pDoi = (int) Math.round(brut * 0.0375);
                 int cass = (int) Math.round(brut * 0.10);
@@ -110,15 +152,19 @@ public class a {
                     impozit = (int) (Math.round((brut - asigurari + bonuri - deductibil) * 0.1));
                 }
 
-                //TODO: Output
-                int salariuNet = (int) Math.round(brut - pUnu - pDoi - cass - impozit);
+                int salariuNet = (int) Math.round(brut - asigurari - impozit);
 
+                // TODO: calcul estimativ overtime
+                double valoareOra = (double)salariuNet / 168;
+                int OT = (int)Math.round((oreSapt * valoareOra * saptProcent) + (oreSarb * valoareOra * sarbProcent) + (OreWeekend * valoareOra * weekendProcent));
+
+                //TODO: Output
                 net.setText(String.valueOf(salariuNet));
                 pilon1.setText(String.valueOf(pUnu));
                 pilon2.setText(String.valueOf(pDoi));
                 CASS.setText(String.valueOf(cass));
                 Impozit.setText(String.valueOf(impozit));
-
+                venitOT.setText(String.valueOf(OT));
             }
         });
 
@@ -171,6 +217,34 @@ public class a {
                     faraScutiri = false;
                 } else {
                     faraScutiri = true;
+                }
+            }
+        });
+        oreSaptamana.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+            }
+        });
+        oreSarbatori.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+            }
+        });
+        oreWeekend.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+            }
+        });
+        liberOT.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                if (liberOT.isSelected()) {
+                    ziLibera = true;
+                } else {
+                    ziLibera = false;
                 }
             }
         });
