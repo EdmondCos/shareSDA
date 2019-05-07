@@ -52,7 +52,9 @@
                         <maximum-size width="100" height="20"/>
                       </grid>
                     </constraints>
-                    <properties/>
+                    <properties>
+                      <editable value="false"/>
+                    </properties>
                   </component>
                 </children>
               </grid>
@@ -630,17 +632,6 @@
         <properties/>
         <border type="none"/>
         <children>
-          <component id="5c497" class="javax.swing.JButton" binding="netButton">
-            <constraints>
-              <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false">
-                <preferred-size width="-1" height="20"/>
-                <maximum-size width="-1" height="20"/>
-              </grid>
-            </constraints>
-            <properties>
-              <text value="Calculeaza salariul net"/>
-            </properties>
-          </component>
           <component id="535e7" class="javax.swing.JButton" binding="brutButton">
             <constraints>
               <grid row="1" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false">
@@ -649,7 +640,7 @@
               </grid>
             </constraints>
             <properties>
-              <text value="Calculeaza Salariul Brut"/>
+              <text value="Calculeaza Salariul "/>
             </properties>
           </component>
           <vspacer id="24145">
