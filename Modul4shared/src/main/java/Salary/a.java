@@ -39,11 +39,11 @@ public class a {
     private JTextField venitOT;
     private JCheckBox scutiri;
     private JCheckBox liberOT;
-    private JButton netButton;
+//    private JButton netButton;
     private JButton brutButton;
 
     private String sNet;
-    private String sBrut;
+//    private String sBrut;
 
     private String numarBon;
     private String valoareBon;
