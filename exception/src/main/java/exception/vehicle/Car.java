@@ -7,7 +7,7 @@ public class Car {
         this.maxSpeed = maxSpeed;
     }
 
-    public void accelerate(int newSpeed) {
+    public void accelerate(int newSpeed) throws CarCrashException {
         if (newSpeed > maxSpeed) {
 //            throw new IllegalArgumentException("Speed not supported");
             throw new CarCrashException("Speed not supported");
