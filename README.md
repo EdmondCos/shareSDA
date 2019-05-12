@@ -1,3 +1,0 @@
-# shareSDA
-Learning Stuff
-.hello
