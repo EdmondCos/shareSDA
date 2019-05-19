@@ -1,12 +1,13 @@
 package com.sda.fisiere;
 
-import java.io.*;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import java.nio.file.StandardOpenOption;
 import java.util.LinkedList;
 import java.util.List;
 
-public class LegacyFieldManipulator implements IFileManipulator {
-
-    @Override
+public class ModernFileManipulator implements IFileManipulator {
     public List<String> readFromFile(PathType pathType) {
         List<String> result = new LinkedList<>();
         String path = "";
@@ -22,34 +23,27 @@ public class LegacyFieldManipulator implements IFileManipulator {
                 System.out.println("Path received not recognized");
         }
 
-        try (BufferedReader inputStream = new BufferedReader(new FileReader(path))) {
-
-            String line = inputStream.readLine();
-            while (line != null) {
-                result.add(line);
-                line = inputStream.readLine();
-            }
-
+        try {
+//            Din string path creez un obiect de tip Path pe care-l dau parametru in read all lines.
+            result.addAll(Files.readAllLines(Paths.get(path)));
         } catch (IOException e) {
             e.printStackTrace();
         }
         return result;
     }
 
-    @Override
     public void writeToFile(List<String> linesToWrite, boolean append) {
+        StandardOpenOption openOption;
+        if (append) {
+            openOption = StandardOpenOption.APPEND;
+        } else {
+            openOption = StandardOpenOption.WRITE;
+        }
 
-        try (FileWriter fileWriter = new FileWriter(RELATIVE_PATH, append);
-             BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
-             PrintWriter printWriter = new PrintWriter(bufferedWriter)) {
-
-            for (String line : linesToWrite) {
-                printWriter.println(line);
-            }
-
+        try {
+            Files.write(Paths.get(RELATIVE_PATH), linesToWrite, openOption);
         } catch (IOException e) {
             e.printStackTrace();
         }
-
     }
 }
