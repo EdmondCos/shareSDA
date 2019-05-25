@@ -6,14 +6,7 @@ import java.util.function.Predicate;
 
 public class Main {
     public static void main(String[] args) {
-        Person gigel = new Person("Gigel", 18);
-        Person dorel = new Person("Dorel", 15);
-        Person ionel = new Person("Ionel", 22);
-
-        List<Person> people = new LinkedList<>();
-        people.add(gigel);
-        people.add(dorel);
-        people.add(ionel);
+        getPeople();
 
         Predicate<Person> isMajor = person -> person.getAge() >= 18;
 //        isMajorLambda(people, isMajor);
@@ -34,6 +27,18 @@ public class Main {
         hello.greet();
         hello2.greet();
 
+    }
+
+    public static List<Person> getPeople() {
+        Person gigel = new Person("Gigel", 18);
+        Person dorel = new Person("Dorel", 15);
+        Person ionel = new Person("Ionel", 22);
+
+        List<Person> people = new LinkedList<>();
+        people.add(gigel);
+        people.add(dorel);
+        people.add(ionel);
+        return people;
     }
 
     private static void isMajorLambda(List<Person> people, Predicate<Person> isMajor) {
