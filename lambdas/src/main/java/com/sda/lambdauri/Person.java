@@ -1,4 +1,4 @@
-package com.sda.lambdas;
+package com.sda.lambdauri;
 
 public class Person {
 

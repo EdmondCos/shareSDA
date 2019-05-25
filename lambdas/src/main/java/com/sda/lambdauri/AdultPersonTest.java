@@ -1,4 +1,4 @@
-package com.sda.lambdas;
+package com.sda.lambdauri;
 
 import java.util.function.Predicate;
 
