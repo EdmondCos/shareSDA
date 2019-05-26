@@ -46,7 +46,7 @@ public class CalculatorTestParametrizat {
     }
 
     private Calculator target = new Calculator(0, 0);
-    
+
     @Test
     public void aduna() {
         assertEquals(parametru3, target.aduna(parametru1, parametru2));
