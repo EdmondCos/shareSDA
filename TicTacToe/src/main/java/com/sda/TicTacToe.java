@@ -48,7 +48,7 @@ public class TicTacToe {
 
                     (table[0][0] == table[1][1] && table[1][1] == table[2][2] && table[0][0] == 'X') ||
                     (table[0][2] == table[1][1] && table[1][1] == table[2][0] && table[0][2] == 'X')) {
-                System.out.println("Player X won");
+                System.out.println("Player X won!");
                 return true;
             }
             if ((table[0][0] == table[0][1] && table[0][1] == table[0][2] && table[0][0] == 'O') ||
@@ -61,10 +61,10 @@ public class TicTacToe {
 
                     (table[0][0] == table[1][1] && table[1][1] == table[2][2] && table[0][0] == 'O') ||
                     (table[0][2] == table[1][1] && table[1][1] == table[2][0] && table[0][2] == 'O')) {
-                System.out.println("Player O won");
+                System.out.println("Player O won!");
                 return true;
             } if (v == 9){
-                System.out.println("Draw");
+                System.out.println("Draw!");
                 return true;
             }
         }
