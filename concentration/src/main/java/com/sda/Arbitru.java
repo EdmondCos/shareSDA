@@ -4,15 +4,13 @@ public class Arbitru {
     private IPlayable player;
     private Board board;
 
-    private boolean bol = true;
-
     public Arbitru(int size, IPlayable player) {
         this.board = new Board(size);
         this.player = player;
     }
 
     public void playGame() {
-        while (bol) {
+        while (!board.isGameOver()) {
             int[] c1 = player.getCoordonates();
             while (board.isRevealed(c1)) {
                 System.out.println("Position was already guessed!");
@@ -37,11 +35,6 @@ public class Arbitru {
                 board.hide(c1, c2);
             }
             System.out.println();
-
-            if (board.isGameOver()) {
-                bol = false;
-                System.out.println("You won!");
-            }
         }
     }
 }
