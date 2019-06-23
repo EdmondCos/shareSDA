@@ -3,7 +3,9 @@ package com.sda;
 public class Main {
     public static void main(String[] args) {
 
-        Board b = new Board();
-        System.out.println(b.toStrings());
+        Player player = new Player();
+
+        Arbitru arbitru = new Arbitru(4, player);
+        arbitru.playGame();
     }
 }
