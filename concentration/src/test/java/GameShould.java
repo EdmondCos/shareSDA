@@ -1,9 +1,9 @@
 import com.sda.Arbitru;
-import com.sda.Player;
+import com.sda.IPlayable;
 import org.junit.Test;
 
 public class GameShould {
-    private BotPlayer botPlayer = new BotPlayer();
+    private IPlayable botPlayer = new BotPlayer();
 
     @Test
     public void finishWhenBotIsPlaying() {
