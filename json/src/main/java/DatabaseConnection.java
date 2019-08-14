@@ -33,53 +33,53 @@ public class DatabaseConnection {
 
         System.out.println(carti.find(new Document("autor", "Jules Verne" )).first());
 
-        //save doc in db
-//        carti.insertOne(myFirstBook);
-//
-//
-//        //extragem doc din db si il salvam pe primul
-//        Document first = carti.find().first();
-//
-//        System.out.println(carti.countDocuments(my2ndBook));
-//
-//        System.out.println("Structura unui doc in Java: " + new Document());
-//
-//        //update query
-//        carti.updateOne(eq("titlu", "20 000 de leghe sub mari"),
-//                new Document("$set", new Document("titlu", "20.000 de leghe sub mari")) );
-//
-////        insertBatch(100, carti);
-//        afiseazaContinut(carti);
-//
-//        carti.deleteMany(new Document());
-//        if (carti.find().iterator().hasNext()) {
-//            System.out.println("Au ramas doc in db");
-//        } else {
-//            System.out.println("Nu a mai ramas nimic");
-//        }
-//
-//        // inchidem conexiunea
-//        client.close();
-//    }
-//
-//    private static void afiseazaContinut(MongoCollection<Document> carti) {
-//        FindIterable<Document> documents = carti.find();
-//        MongoCursor<Document> iterator = documents.iterator();
-//
-//        while (iterator.hasNext()) {
-//            System.out.println(iterator.next());
-//        }
-//    }
-//
-//    private static void insertBatch(int limit, MongoCollection<Document> carti) {
-////        for (int i = 0; i < limit; i++) {
-////            carti.insertOne(new Document("i", i));
-////        }
-//
-//        List<Document> documente = new LinkedList<>();
+//        save doc in db
+        carti.insertOne(myFirstBook);
+
+
+        //extragem doc din db si il salvam pe primul
+        Document first = carti.find().first();
+
+        System.out.println(carti.countDocuments(my2ndBook));
+
+        System.out.println("Structura unui doc in Java: " + new Document());
+
+        //update query
+        carti.updateOne(eq("titlu", "20 000 de leghe sub mari"),
+                new Document("$set", new Document("titlu", "20.000 de leghe sub mari")) );
+
+//        insertBatch(100, carti);
+        afiseazaContinut(carti);
+
+        carti.deleteMany(new Document());
+        if (carti.find().iterator().hasNext()) {
+            System.out.println("Au ramas doc in db");
+        } else {
+            System.out.println("Nu a mai ramas nimic");
+        }
+
+        // inchidem conexiunea
+        client.close();
+    }
+
+    private static void afiseazaContinut(MongoCollection<Document> carti) {
+        FindIterable<Document> documents = carti.find();
+        MongoCursor<Document> iterator = documents.iterator();
+
+        while (iterator.hasNext()) {
+            System.out.println(iterator.next());
+        }
+    }
+
+    private static void insertBatch(int limit, MongoCollection<Document> carti) {
 //        for (int i = 0; i < limit; i++) {
-//            documente.add(new Document("i", i));
+//            carti.insertOne(new Document("i", i));
 //        }
-//        carti.insertMany(documente);
+
+        List<Document> documente = new LinkedList<>();
+        for (int i = 0; i < limit; i++) {
+            documente.add(new Document("i", i));
+        }
+        carti.insertMany(documente);
     }
 }
