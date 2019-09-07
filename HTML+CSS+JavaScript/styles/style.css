@@ -1,0 +1,136 @@
+
+#idButon{
+color: red;
+background-color: black;
+width: 50%;
+height: 50px;
+}
+
+
+button{
+color: purple;
+}
+
+
+#div1{
+background-color: yellow;
+border: 2px solid black;
+}
+#div2{
+background-color: pink;
+}
+#div3{
+border: 5px dashed red;
+background-color: black;
+}
+#div3>p{
+color: white;
+}
+div{
+color: green;
+}
+
+.clasa{
+color: red;
+}
+#classdiv{
+color: orange;
+}
+
+h1+p,h2+p{
+background-color: yellow;
+}
+
+#par1{
+background-color: black;
+color: red;
+border: 3px dotted gray;
+}
+
+button{
+font-family: "Courier-New";
+font-size: 24px;
+text-decoration: underline;
+font-weight: bold;
+font-style: italic;
+}
+
+.ex{
+width: 300px;
+height: 300px;
+color: black;
+display: inline-block;
+}
+
+#div-1{
+border: 3px solid red;
+background-color: green;
+margin-top: 10px;
+margin-bottom: 50px;
+margin-left: 10%;
+padding-left: 150px;
+}
+
+#div-2{
+border: 3px solid blue;
+background-color: yellow;
+margin: 30px 20px;
+}
+
+button{
+color: purple;
+}
+
+.cls{
+margin: 10px;
+padding: 20px;
+}
+
+#b1{
+background-color: blue;
+color: white;
+}
+
+#b2{
+color: orange;
+}
+
+#b3{
+background-color: yellow;
+font-family: "Courier-New";
+text-decoration: underline;
+color: blue;
+}
+
+#b4{
+color: blue;
+border: 3px dashed pink;
+}
+
+#b1:hover {
+background-color: red;
+}
+
+button:nth-child(2){
+color: pink;
+!important;
+}
+
+/*se aplica daca are maxim inaltimea*/
+@media(max-height: 720px){
+#test1{
+background-color: magenta}
+}
+
+/*se aplica daca are min inaltimea*/
+@media(min-width: 144px){
+#test2{
+background-color: orange}
+}
+
+/*
+display: flex;
+align-content: center;
+align-items: center;
+justify-content: center;
+*/
