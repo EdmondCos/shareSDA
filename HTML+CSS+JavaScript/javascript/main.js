@@ -27,5 +27,7 @@ console.log(element)
 console.log(clasa)
 
 function myAlert(a){
-alert(a)
-}
+alert(a)}
+
+
+
