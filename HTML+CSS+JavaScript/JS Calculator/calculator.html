@@ -7,16 +7,24 @@
 </head>
 <body>
 
-<div id="div1">
-<input type="number" id="first">
-<button id="button" onclick="add()">+</button>
-<button id="button" onclick="minus()">-</button>
-<input type="number" id="second">
-<div>
-<button id="button" onclick="multiply()">*</button>
-<button id="button" onclick="divide()">/</button>
+<div class="container" id="numbers">
+	<input type="number" id="firstNumber">
+	<br>
+	<input type="number" id="secondNumber">
 </div>
+<div class="container "id="opsContainer">
+	<button id="opsButton">Operations</button>
+	<div id="operations">
+		<button onclick="add()">+</button>
+		<button onclick="minus()">-</button>
+		<br>
+		<button onclick="multiply()">*</button>
+		<button onclick="divide()">/</button>
+		<br>
+		<button onclick="compareValue()">< / ></button>
+	</div>
 </div>
+<div id="chenar"></div>
 
 <script src="calculator.js"></script>
 </body>

@@ -1,3 +1,25 @@
-#div1{
-	text-align: center
+.container{
+	display: inline-block;
+}
+
+#opsButton{
+	background-color: black;
+	color: white;
+	font-size: 16px;
+	padding: 17px;
+	border: none;
+}
+
+#operations{
+	display: none;
+	position: absolute;
+	background-color: black;
+}
+
+#opsContainer:hover #operations {
+	display: block;
+}
+
+#chenar{
+	position: absolute;
 }

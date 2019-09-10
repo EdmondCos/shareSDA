@@ -1,27 +1,48 @@
-var first
-var second
+var firstNumber
+var secondNumber
+var result
 
 function save(){
-first = document.getElementById("first").value
-second = document.getElementById("second").value
+	firstNumber = document.getElementById("firstNumber").value
+	secondNumber = document.getElementById("secondNumber").value
+}
+
+function print(){
+	document.getElementById("chenar").innerHTML = "Result is: " + result;
 }
 
 function add(){
-save()
-alert(+first + +second)
+	save()
+	result = +firstNumber + +secondNumber
+	print()
 }
 
 function minus(){
-save()
-alert(+first - +second)
+	save()
+	result = +firstNumber - +secondNumber
+	print()
 }
 
 function multiply(){
-save()
-alert(+first * +second)
+	save()
+	result = +firstNumber * +secondNumber
+	print()
 }
 
 function divide(){
-save()
-alert(+first / +second)
+	save()
+	result = +firstNumber / +secondNumber
+	print()
+}
+
+function compareValue(){
+	save()
+	
+	if(firstNumber > secondNumber){
+		document.getElementById("chenar").innerHTML = firstNumber + " > " + secondNumber
+	} else if(secondNumber > firstNumber) {
+		document.getElementById("chenar").innerHTML = firstNumber + " < " + secondNumber
+	} else {
+		document.getElementById("chenar").innerHTML = firstNumber + " = " + secondNumber
+	}
 }
