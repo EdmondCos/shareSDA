@@ -1,14 +1,34 @@
 var firstNumber
 var secondNumber
 var result
+var write = $("#chenar")
+var operationButton = $("#calcul")
+
+operationButton.click(calculate)
 
 function save(){
 	firstNumber = document.getElementById("firstNumber").value
 	secondNumber = document.getElementById("secondNumber").value
 }
 
+function calculate(){
+	var operator = document.getElementById("operations").value
+	if(operator == "+"){
+		add()
+	} else if(operator == "-"){
+		minus()
+	} else if(operator == "*"){
+		multiply()
+	} else if(operator == "/"){
+		divide()
+	} else {
+		compareValue()
+	}
+	
+}
+
 function print(){
-	document.getElementById("chenar").innerHTML = "Result is: " + result;
+	write.text("Rezultatul este: " + result)
 }
 
 function add(){
@@ -39,10 +59,12 @@ function compareValue(){
 	save()
 	
 	if(firstNumber > secondNumber){
-		document.getElementById("chenar").innerHTML = firstNumber + " > " + secondNumber
+		write.text(firstNumber + " > " + secondNumber)
 	} else if(secondNumber > firstNumber) {
-		document.getElementById("chenar").innerHTML = firstNumber + " < " + secondNumber
+		write.text(firstNumber + " < " + secondNumber)
 	} else {
-		document.getElementById("chenar").innerHTML = firstNumber + " = " + secondNumber
+		write.text(firstNumber + " = " + secondNumber)
 	}
 }
+
+

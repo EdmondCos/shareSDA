@@ -3,29 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <title></title>
-	   <link rel="stylesheet" type="text/css" href="calculator.css">
+	<link rel="stylesheet" type="text/css" href="calculator.css">
 </head>
 <body>
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 
-<div class="container" id="numbers">
+<div id="container">
 	<input type="number" id="firstNumber">
-	<br>
+	<select id="operations">
+		<option>+</option>
+		<option>-</option>
+		<option>*</option>
+		<option>/</option>
+		<option>< / ></option>
+	</select>
 	<input type="number" id="secondNumber">
-</div>
-<div class="container "id="opsContainer">
-	<button id="opsButton">Operations</button>
-	<div id="operations">
-		<button onclick="add()">+</button>
-		<button onclick="minus()">-</button>
-		<br>
-		<button onclick="multiply()">*</button>
-		<button onclick="divide()">/</button>
-		<br>
-		<button onclick="compareValue()">< / ></button>
-	</div>
-</div>
-<div id="chenar"></div>
+	<button id="calcul">Calculeaza</button>
+	<!--onclick="calculate()-->
 
-<script src="calculator.js"></script>
+</div>
+<div id="chenar">Rezultatul este: </div>
+
+<!--<script src="calculatorJS.js"></script>-->
+<script src="calculatorJQuery.js"></script>
 </body>
 </html>
+
