@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
+  <servlet>
+    <servlet-name>Adder</servlet-name>
+    <servlet-class>calculator.Adder</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>Minus</servlet-name>
+    <servlet-class>calculator.Minus</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>Multiply</servlet-name>
+    <servlet-class>calculator.Multiply</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>Adder</servlet-name>
+    <url-pattern>/add</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>Minus</servlet-name>
+    <url-pattern>/minus</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>Multiply</servlet-name>
+    <url-pattern>/multiply</url-pattern>
+  </servlet-mapping>
+
+</web-app>
