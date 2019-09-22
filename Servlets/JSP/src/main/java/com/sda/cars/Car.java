@@ -1,12 +1,12 @@
 package com.sda.cars;
 
 public class Car {
-    String brand;
-    String model;
-    int year;
-    double km;
+    private String brand;
+    private String model;
+    private int year;
+    private double km;
 
-    Car(String brand, String model, int year, double km) {
+    public Car(String brand, String model, int year, double km) {
         this.brand = brand;
         this.model = model;
         this.year = year;
@@ -14,7 +14,22 @@ public class Car {
     }
 
     String print() {
-        StringBuilder builder = new StringBuilder();
-        return builder.append(brand + " " + model + " " + year + " " + km).toString();
+        return (brand + " " + model + " " + year + " " + km);
+    }
+
+    public String getBrand() {
+        return brand;
+    }
+
+    public String getModel() {
+        return model;
+    }
+
+    public int getYear() {
+        return year;
+    }
+
+    public double getKm() {
+        return km;
     }
 }

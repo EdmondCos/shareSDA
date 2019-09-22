@@ -7,13 +7,6 @@
         <welcome-file>masini.jsp</welcome-file>
     </welcome-file-list>
 
-    <servlet>
-        <servlet-name>CarsServlet</servlet-name>
-        <servlet-class>com.sda.cars.CarsServlet</servlet-class>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>CarsServlet</servlet-name>
-        <url-pattern>/</url-pattern>
-    </servlet-mapping>
+
 
 </web-app>
