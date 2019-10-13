@@ -1,5 +1,8 @@
-package com.sda.beans.DI;
+package com.sda.beans.dependencyInjection.classWithDependency;
 
+import com.sda.beans.dependencyInjection.classDependency.DependencyConstructor;
+import com.sda.beans.dependencyInjection.classDependency.DependencyField;
+import com.sda.beans.dependencyInjection.classDependency.DependencySetter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 

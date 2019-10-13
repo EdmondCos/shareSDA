@@ -1,4 +1,4 @@
-package com.sda.beans.DI;
+package com.sda.beans.dependencyInjection.classDependency;
 
 import org.springframework.stereotype.Component;
 
