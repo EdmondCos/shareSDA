@@ -27,7 +27,7 @@
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <version>${spring.boot.version}</version>
                 <configuration>
-                    <mainClass>beans.SpringBootMain</mainClass>
+                    <mainClass>beans.main.SpringBootMain</mainClass>
                 </configuration>
             </plugin>
         </plugins>

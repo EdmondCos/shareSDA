@@ -8,7 +8,6 @@ import javax.annotation.PostConstruct;
 @Component
 public class BusinessService {
 
-    @Value("${my.custom.setting}")
     private String setting;
 
     @PostConstruct
